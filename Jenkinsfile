@@ -22,7 +22,7 @@ stages{
   }
    stage('docker image creation'){
     steps{
-     sh 'docker build -t kavanapc/medicure:latest .'  
+     sh 'docker build -t kavanapc/medicure:v1 .'  
 }
 }
      stage('docker login'){
@@ -34,7 +34,7 @@ stages{
      }
    stage('docker push'){
      steps{
-      sh 'docker push kavanapc/medicure:latest'
+      sh 'docker push kavanapc/medicure:v1'
       }
    }
 }
