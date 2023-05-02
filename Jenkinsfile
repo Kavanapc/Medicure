@@ -13,6 +13,12 @@ stages{
      steps{
        sh'mvn clean package'
           }
+
        } 
-}
+  stage('test report'){
+    steps{
+    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Medicure/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+           }
+  }
+  }
 } 
