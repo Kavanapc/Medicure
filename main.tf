@@ -14,11 +14,11 @@ resource "aws_instance" "medicure-test-server" {
     type     = "ssh"
     user     = "ubuntu"
     private_key = file("aws_key.pem")
-    host     = aws_instance.test-server.public_ip
+    host     = aws_instance.medicure-test-server.public_ip
   }
 
   provisioner "local-exec" {
-        command = " echo ${aws_instance.test-server.public_ip} > inventory "
+        command = " echo ${aws_instance.medicure-test-server.public_ip} > inventory "
   }
  provisioner "local-exec" {
   command = "ansible-playbook /var/lib/jenkins/workspace/Medicure/medicure.yml"
