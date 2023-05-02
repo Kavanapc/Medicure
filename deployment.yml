@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: healthcare
-        image: "kavanapc/medicure:v1"
+        image: "kavanapc/medicure"
         ports:
           - containerPort: 80
 ---
