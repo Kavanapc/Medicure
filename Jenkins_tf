@@ -1,0 +1,21 @@
+pipeline{
+agent any
+tools{
+terraform 'terraform'
+    }
+stages{
+stage('source code'){
+ steps{
+   git 'https://github.com/Kavanapc/Medicure.git'
+   }
+}
+stage('create infra with terraform'){
+ steps{
+   sh 'chmod 400 aws_key.pem'
+   sh 'terraform init'
+   sh 'terraform validate'
+   sh 'terraform apply --auto-approve'
+      }
+  }
+}
+}
