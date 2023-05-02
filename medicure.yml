@@ -16,4 +16,4 @@
      become: yes
      become_user: root
    - name: deploy the image from docker-hub and run as container
-     command: docker run -itd -p8084:8081 kavanapc/medicure:v1
+     command: docker run -itd -p8084:8081 kavanapc/medicure:latest
